@@ -1,71 +1,71 @@
 qlib_init:
-    provider_uri: "~/.qlib/qlib_data/cn_data"
-    region: cn
-market: &market csi300
-benchmark: &benchmark SH000300
+    provider_uri: "~/.qlib/qlib_data/cn_data"  # 数据存储路径
+    region: cn  # 市场区域：中国
+market: &market csi300  # 股票池：沪深300
+benchmark: &benchmark SH000300  # 对标基准指数：沪深300指数
 data_handler_config: &data_handler_config
-    start_time: 2008-01-01
-    end_time: 2020-08-01
-    fit_start_time: 2008-01-01
-    fit_end_time: 2014-12-31
-    instruments: *market
+    start_time: 2008-01-01  # 数据开始时间
+    end_time: 2020-08-01    # 数据结束时间
+    fit_start_time: 2008-01-01  # 数据处理器拟合（如归一化）的开始时间
+    fit_end_time: 2014-12-31    # 数据处理器拟合的结束时间（通常与训练集一致，防止未来信息泄露）
+    instruments: *market  # 使用的股票池
 port_analysis_config: &port_analysis_config
     strategy:
-        class: TopkDropoutStrategy
+        class: TopkDropoutStrategy  # 策略类名：TopK 轮换策略
         module_path: qlib.contrib.strategy
         kwargs:
-            signal: <PRED>
-            topk: 50
-            n_drop: 5
+            signal: <PRED>  # 交易信号来源：模型预测值
+            topk: 50  # 每日持有股票数量：50只
+            n_drop: 5  # 每日轮换数量：卖出排名靠后的5只，买入新的前5只
     backtest:
-        start_time: 2017-01-01
-        end_time: 2020-08-01
-        account: 100000000
-        benchmark: *benchmark
+        start_time: 2017-01-01  # 回测开始时间
+        end_time: 2020-08-01    # 回测结束时间
+        account: 1000000  # 初始资金：1亿
+        benchmark: *benchmark  # 比较基准
         exchange_kwargs:
-            limit_threshold: 0.095
-            deal_price: close
-            open_cost: 0.0005
-            close_cost: 0.0015
-            min_cost: 5
+            limit_threshold: 0.095  # 涨跌停限制阈值（9.5%）
+            deal_price: close  # 成交价格：收盘价
+            open_cost: 0.0005  # 开仓成本（佣金等）：0.05%
+            close_cost: 0.0015  # 平仓成本（含印花税）：0.15%
+            min_cost: 5  # 最低交易费用：5元
 task:
     model:
-        class: LGBModel
+        class: LGBModel  # 模型类名：LightGBM
         module_path: qlib.contrib.model.gbdt
         kwargs:
-            loss: mse
-            colsample_bytree: 0.8879
-            learning_rate: 0.2
-            subsample: 0.8789
-            lambda_l1: 205.6999
-            lambda_l2: 580.9768
-            max_depth: 8
-            num_leaves: 210
-            num_threads: 20
+            loss: mse  # 损失函数：均方误差
+            colsample_bytree: 0.8879  # 每棵树使用的特征比例
+            learning_rate: 0.2        # 学习率
+            subsample: 0.8789         # 样本采样比例
+            lambda_l1: 205.6999       # L1 正则化系数
+            lambda_l2: 580.9768       # L2 正则化系数
+            max_depth: 8              # 树的最大深度
+            num_leaves: 210           # 叶子节点数量
+            num_threads: 20           # 并行线程数
     dataset:
         class: DatasetH
         module_path: qlib.data.dataset
         kwargs:
             handler:
-                class: Alpha158
+                class: Alpha158  # 数据处理器：Alpha158 因子集
                 module_path: qlib.contrib.data.handler
                 kwargs: *data_handler_config
             segments:
-                train: [2008-01-01, 2014-12-31]
-                valid: [2015-01-01, 2016-12-31]
-                test: [2017-01-01, 2020-08-01]
+                train: [2008-01-01, 2014-12-31]  # 训练集时间段
+                valid: [2015-01-01, 2016-12-31]  # 验证集时间段（用于早停和调参）
+                test: [2017-01-01, 2020-08-01]   # 测试集时间段（用于最终回测）
     record: 
-        - class: SignalRecord
+        - class: SignalRecord  # 记录器1：记录模型预测信号
           module_path: qlib.workflow.record_temp
           kwargs: 
             model: <MODEL>
             dataset: <DATASET>
-        - class: SigAnaRecord
+        - class: SigAnaRecord  # 记录器2：分析预测信号表现（IC, ICIR等）
           module_path: qlib.workflow.record_temp
           kwargs: 
-            ana_long_short: False
-            ann_scaler: 252
-        - class: PortAnaRecord
+            ana_long_short: False  # 是否进行多空组合分析
+            ann_scaler: 252  # 年化系数（一年约252个交易日）
+        - class: PortAnaRecord  # 记录器3：组合绩效分析（回测结果）
           module_path: qlib.workflow.record_temp
           kwargs: 
             config: *port_analysis_config

@@ -1,0 +1,8 @@
+{
+    "output": "{\n    \"monitored_company\": \"陕西旅游集团有限公司\",\n    \"risk_level\": \"Orange\",\n    \"risk_category\": [\"财务风险\", \"合规风险\", \"关联风险\"],\n    \"analysis_summary\": \"陕西旅游集团有限公司因违反银行间债券市场自律规则被交易商协会严重警告并责令整改，暴露内部管理缺陷和信用问题；结合融资租赁项目已逾期3300万元，以及担保方南山集团有限公司财务恶化（负债超1300亿元、股份冻结），导致信用风险和流动性压力加剧，潜在威胁租金回收和资产保全。\",\n    \"key_risk_indicators\": {\n        \"credit_risk\": \"高\",\n        \"asset_risk\": \"中\",\n        \"reputation_risk\": \"高\"\n    },\n    \"impact_on_leasing_project\": \"该舆情可能进一步恶化陕西旅游集团的融资环境，增加再融资成本和还款难度；同时，担保方南山集团财务风险可能弱化担保能力，在项目逾期背景下，提升租金回收失败风险、资产保全难度和租后管理复杂度。\",\n    \"recommended_actions\": [\n        {\n            \"action\": \"立即加强与陕西旅游集团的沟通，要求提供整改进展报告及还款计划更新\",\n            \"priority\": \"高\",\n            \"responsible_party\": \"租后管理部\"\n        },\n        {\n            \"action\": \"评估南山集团担保能力，并准备备用担保或资产保全预案\",\n            \"priority\": \"高\",\n            \"responsible_party\": \"风险管理部门\"\n        },\n        {\n            \"action\": \"强化项目现金流监控，每月审查租赁标的物状况\",\n            \"priority\": \"中\",\n            \"responsible_party\": \"资产管理部\"\n        }\n    ],\n    \"comprehensive_risk_alert\": \"针对陕西旅游集团的监管处罚和内部管理问题，叠加项目逾期及担保方南山集团的财务危机，形成信用与流动性双重风险。舆情可能快速发酵，影响市场信心和再融资能力，显著增加租金回收不确定性。建议决策层优先部署风险预案，避免风险传导至资产保全环节。\"\n}",
+    "status": "success",
+    "task_id": "be82e222-3716-4717-b09a-6d39c58f674e",
+    "call_seq": 5,
+    "task_type": "analysis_sentiment",
+    "api_endpoint": "analysis_sentiment"
+}

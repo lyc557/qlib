@@ -1,0 +1,25 @@
+--2025-12-04 11:01:58--  https://github.com/chenditc/investment_data/releases/latest/download/qlib_bin.tar.gz
+正在解析主机 github.com (github.com)... 20.205.243.166
+正在连接 github.com (github.com)|20.205.243.166|:443... 已连接。
+已发出 HTTP 请求，正在等待回应... 302 Found
+位置：https://github.com/chenditc/investment_data/releases/download/2025-12-03/qlib_bin.tar.gz [跟随至新的 URL]
+--2025-12-04 11:01:58--  https://github.com/chenditc/investment_data/releases/download/2025-12-03/qlib_bin.tar.gz
+再次使用存在的到 github.com:443 的连接。
+已发出 HTTP 请求，正在等待回应... 302 Found
+位置：https://release-assets.githubusercontent.com/github-production-release-asset/515560111/89444fea-e8ba-4ac9-9dd9-b1e042748c47?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-12-04T03%3A39%3A13Z&rscd=attachment%3B+filename%3Dqlib_bin.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-12-04T02%3A39%3A00Z&ske=2025-12-04T03%3A39%3A13Z&sks=b&skv=2018-11-09&sig=%2BPFuXnqUExkm5fPGyYTEt7h868Wm3oK3ckinor0Oep0%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc2NDgyMDkxOSwibmJmIjoxNzY0ODE3MzE5LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.68-eJ3fysYF2_X_soCjOTqj1A8gbUbgi4iouQuuDGQs&response-content-disposition=attachment%3B%20filename%3Dqlib_bin.tar.gz&response-content-type=application%2Foctet-stream [跟随至新的 URL]
+--2025-12-04 11:01:59--  https://release-assets.githubusercontent.com/github-production-release-asset/515560111/89444fea-e8ba-4ac9-9dd9-b1e042748c47?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-12-04T03%3A39%3A13Z&rscd=attachment%3B+filename%3Dqlib_bin.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-12-04T02%3A39%3A00Z&ske=2025-12-04T03%3A39%3A13Z&sks=b&skv=2018-11-09&sig=%2BPFuXnqUExkm5fPGyYTEt7h868Wm3oK3ckinor0Oep0%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc2NDgyMDkxOSwibmJmIjoxNzY0ODE3MzE5LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.68-eJ3fysYF2_X_soCjOTqj1A8gbUbgi4iouQuuDGQs&response-content-disposition=attachment%3B%20filename%3Dqlib_bin.tar.gz&response-content-type=application%2Foctet-stream
+正在解析主机 release-assets.githubusercontent.com (release-assets.githubusercontent.com)... 185.199.111.133, 185.199.110.133, 185.199.109.133, ...
+正在连接 release-assets.githubusercontent.com (release-assets.githubusercontent.com)|185.199.111.133|:443... 已连接。
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：486791155 (464M) [application/octet-stream]
+正在保存至: “qlib_bin.tar.gz”
+
+qlib_bin.tar.gz                     0%[                                                             ] 798.00K  --.-KB/s  剩余 1377d   qlib_bin.tar.gz                     0%[                                                             ] 798.00K  --.-KB/s  用时 2d 7h   
+
+2025-12-06 18:37:21 (4.08 B/s) - 在 817151/486791155 字节处发生读取错误 (Operation timed out)。重试中。
+
+--2025-12-06 18:37:22--  (尝试次数： 2)  https://release-assets.githubusercontent.com/github-production-release-asset/515560111/89444fea-e8ba-4ac9-9dd9-b1e042748c47?sp=r&sv=2018-11-09&sr=b&spr=https&se=2025-12-04T03%3A39%3A13Z&rscd=attachment%3B+filename%3Dqlib_bin.tar.gz&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2025-12-04T02%3A39%3A00Z&ske=2025-12-04T03%3A39%3A13Z&sks=b&skv=2018-11-09&sig=%2BPFuXnqUExkm5fPGyYTEt7h868Wm3oK3ckinor0Oep0%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc2NDgyMDkxOSwibmJmIjoxNzY0ODE3MzE5LCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.68-eJ3fysYF2_X_soCjOTqj1A8gbUbgi4iouQuuDGQs&response-content-disposition=attachment%3B%20filename%3Dqlib_bin.tar.gz&response-content-type=application%2Foctet-stream
+正在连接 release-assets.githubusercontent.com (release-assets.githubusercontent.com)|185.199.111.133|:443... 已连接。
+已发出 HTTP 请求，正在等待回应... 618 jwt:expired
+2025-12-06 18:37:22 错误 618：jwt:expired。
+
