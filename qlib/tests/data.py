@@ -53,7 +53,16 @@ class GetData:
             The location where the data is saved, including the file name.
         """
         file_name = str(target_path).rsplit("/", maxsplit=1)[-1]
-        resp = requests.get(url, stream=True, timeout=60)
+
+        proxies = None
+        if "http_proxy" in os.environ:
+            proxies = {"http": os.environ["http_proxy"], "https": os.environ["http_proxy"]}
+        if "https_proxy" in os.environ:
+            if proxies is None:
+                proxies = {}
+            proxies["https"] = os.environ["https_proxy"]
+
+        resp = requests.get(url, stream=True, timeout=60, proxies=proxies)
         resp.raise_for_status()
         if resp.status_code != 200:
             raise requests.exceptions.HTTPError()
@@ -110,7 +119,16 @@ class GetData:
 
     def check_dataset(self, file_name: str):
         url = self.merge_remote_url(file_name)
-        resp = requests.get(url, stream=True, timeout=60)
+        
+        proxies = None
+        if "http_proxy" in os.environ:
+            proxies = {"http": os.environ["http_proxy"], "https": os.environ["http_proxy"]}
+        if "https_proxy" in os.environ:
+            if proxies is None:
+                proxies = {}
+            proxies["https"] = os.environ["https_proxy"]
+            
+        resp = requests.get(url, stream=True, timeout=60, proxies=proxies)
         status = True
         if resp.status_code == 404:
             status = False

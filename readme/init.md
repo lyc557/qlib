@@ -17,3 +17,7 @@ python -m qlib.cli.data qlib_data --target_dir ~/.qlib/qlib_data/cn_data --regio
 
 # 获取分钟频数据
 python -m qlib.cli.data qlib_data --target_dir ~/.qlib/qlib_data/cn_data_1min --region cn --interval 1min
+
+
+export http_proxy=http://10.40.0.43:9666
+export https_proxy=http://10.40.0.43:9666
